@@ -2,8 +2,8 @@ import aiohttp
 import asyncio
 from bs4 import BeautifulSoup
 from time import time
-from db.connection import get_session, init_categories, init_db
-from db.models import Task, Category
+from task2.database.connection import get_session, init_categories, init_db, init_users
+from task2.database.models import Task, Category
 from sqlmodel import select
 
 async def fetch(session, url):
@@ -40,10 +40,12 @@ async def parse_and_save(url):
             session.close()
 
 async def main(url: str):
-    pages = 20
+    pages = 2
     urls = [f"{url}{i}" for i in range(1, pages + 1)]
-    await init_db()
+    # await init_db()
+    # await init_categories()
     await init_categories()
+    await init_users()
 
     start = time()
 
