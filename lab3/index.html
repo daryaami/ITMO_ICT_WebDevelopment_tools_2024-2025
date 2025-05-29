@@ -1,0 +1,1277 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../lab2/task2/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Лабораторная работа 3 - Web Programming Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fastapi-celery-docker" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Web Programming Docs" class="md-header__button md-logo" aria-label="Web Programming Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Web Programming Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Лабораторная работа 3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Web Programming Docs" class="md-nav__button md-logo" aria-label="Web Programming Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Web Programming Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Лабораторная работа 1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Лабораторная работа 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1/models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Модели БД
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1/connections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Подключение к БД
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1/api/user/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Users
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1/api/task/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tasks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1/api/tasktimelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Task Time Logs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1/api/category/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Categories
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Лабораторная работа 2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Лабораторная работа 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab2/task1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Задание 1. Различия между threading, multiprocessing и async в Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab2/task2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Задание 2. Параллельный парсинг веб-страниц с сохранением в базу данных
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Лабораторная работа 3
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Лабораторная работа 3
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Цель
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Архитектура проекта
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подзадача 1: Упаковка сервисов в Docker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Подзадача 1: Упаковка сервисов в Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parser-service-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parser Service - Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-manager-app-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task manager App - Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Compose для оркестрации сервисов
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подзадача 2: Реализация API парсера
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Подзадача 2: Реализация API парсера">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parser-service-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parser Service - API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-celery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подзадача 3: Настройка Celery для асинхронного выполнения задач
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Подзадача 3: Настройка Celery для асинхронного выполнения задач">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#celery-worker-celery_workerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Celery Worker (celery_worker.py)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подзадача 4: Интеграция парсера с основным приложением
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Подзадача 4: Интеграция парсера с основным приложением">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Router для вызова парсера из основного приложения
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Принцип работы системы
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Схема взаимодействия компонентов
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Цель
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Архитектура проекта
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подзадача 1: Упаковка сервисов в Docker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Подзадача 1: Упаковка сервисов в Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parser-service-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parser Service - Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-manager-app-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task manager App - Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Compose для оркестрации сервисов
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подзадача 2: Реализация API парсера
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Подзадача 2: Реализация API парсера">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parser-service-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parser Service - API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-celery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подзадача 3: Настройка Celery для асинхронного выполнения задач
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Подзадача 3: Настройка Celery для асинхронного выполнения задач">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#celery-worker-celery_workerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Celery Worker (celery_worker.py)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подзадача 4: Интеграция парсера с основным приложением
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Подзадача 4: Интеграция парсера с основным приложением">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Router для вызова парсера из основного приложения
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Принцип работы системы
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Схема взаимодействия компонентов
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="fastapi-celery-docker">Лабораторная работа: Интеграция парсера данных с FastAPI и использование очередей Celery в Docker</h1>
+<h2 id="_1">Цель</h2>
+<p>Научиться упаковывать FastAPI приложения в Docker, создавать связь между основным приложением и сервисом парсинга данных, а также реализовать асинхронное выполнение задач с использованием очередей Celery и Redis.</p>
+<h2 id="_2">Архитектура проекта</h2>
+<p>Проект состоит из следующих компонентов:</p>
+<ul>
+<li>
+<p>Основное FastAPI приложение (finance_app)</p>
+</li>
+<li>
+<p>Сервис парсера (parser_service)</p>
+</li>
+<li>
+<p>База данных PostgreSQL</p>
+</li>
+<li>
+<p>Redis для хранения очередей задач</p>
+</li>
+<li>
+<p>Celery для обработки асинхронных задач</p>
+</li>
+</ul>
+<h2 id="1-docker">Подзадача 1: Упаковка сервисов в Docker</h2>
+<h3 id="parser-service-dockerfile">Parser Service - Dockerfile</h3>
+<pre><code class="language-dockerfile">FROM python:3.13-slim
+
+RUN apt-get update &amp;&amp; apt-get install -y \
+    gcc build-essential libpq-dev \
+    &amp;&amp; rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY . /app
+
+RUN pip install --no-cache-dir -r /app/req.txt
+
+EXPOSE 8001
+
+CMD [&quot;uvicorn&quot;, &quot;api:app&quot;, &quot;--host&quot;, &quot;0.0.0.0&quot;, &quot;--port&quot;, &quot;8001&quot;]
+</code></pre>
+<h3 id="task-manager-app-dockerfile">Task manager App - Dockerfile</h3>
+<pre><code class="language-dockerfile">FROM python:3.11-slim
+
+RUN apt-get update &amp;&amp; apt-get install -y \
+    gcc build-essential libpq-dev \
+    &amp;&amp; rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY . /app
+
+RUN pip install --no-cache-dir -r /app/req.txt
+
+EXPOSE 8000
+
+CMD [&quot;uvicorn&quot;, &quot;main:app&quot;, &quot;--host&quot;, &quot;0.0.0.0&quot;, &quot;--port&quot;, &quot;8000&quot;]
+</code></pre>
+<h3 id="docker-compose">Docker Compose для оркестрации сервисов</h3>
+<pre><code class="language-yaml">services:
+  db:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: database
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - &quot;5432:5432&quot;
+    healthcheck:
+      test: [&quot;CMD&quot;, &quot;pg_isready&quot;, &quot;-U&quot;, &quot;postgres&quot;]
+      interval: 2s
+      timeout: 3s
+      retries: 5
+
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - &quot;6379:6379&quot;
+
+  main_service:
+    build:
+      context: ./Lr1/lab1
+    container_name: main_service
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - &quot;8000:8000&quot;
+    depends_on:
+      - db
+      - parser_service
+    environment:
+      DB_ADMIN: postgresql+asyncpg://postgres:postgres@db:5432/database
+      PARSER_URL: http://parser_service:8001
+      SYNC_DB_URL: postgresql+psycopg2://postgres:postgres@db:5432/database
+
+  parser_service:
+    build:
+      context: ./Lr3/
+    container_name: parser_service
+    command: uvicorn main:app --host 0.0.0.0 --port 8001 --reload
+    ports:
+      - &quot;8001:8001&quot;
+    depends_on:
+      - redis
+      - db
+    environment:
+      DB_ADMIN: postgresql+asyncpg://postgres:postgres@db:5432/database
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+
+
+  celery_worker:
+    build:
+      context: ./Lr3/
+    container_name: celery_worker
+    command: celery -A celery_worker worker --loglevel=info
+    depends_on:
+      db:
+        condition: service_healthy
+      parser_service:
+        condition: service_started
+      redis:
+        condition: service_started
+    environment:
+      DB_ADMIN: postgresql+asyncpg://postgres:postgres@db:5432/database
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+      PYTHONPATH: /app
+    restart: on-failure
+
+volumes:
+  db_data:
+</code></pre>
+<h2 id="2-api">Подзадача 2: Реализация API парсера</h2>
+<h3 id="parser-service-api">Parser Service - API</h3>
+<pre><code class="language-python">from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from celery_worker import parse, celery_app
+from task2 import parse_asyncio
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI(title=&quot;Parser&quot;)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[&quot;*&quot;], 
+    allow_credentials=True,
+    allow_methods=[&quot;*&quot;],
+    allow_headers=[&quot;*&quot;],
+)
+
+class ParseRequest(BaseModel):
+    url: str
+
+@app.post(&quot;/parse&quot;)
+async def parse_pages(request: ParseRequest):
+    try:
+        await parse_asyncio.main(request.url)
+        return {&quot;message&quot;: f&quot;Pages are parsed from {request.url}&quot;}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post(&quot;/parse/trigger&quot;)
+async def trigger_parse(request: ParseRequest):
+    task = parse.delay(request.url)
+    return {&quot;message&quot;: &quot;Parsing started&quot;, &quot;task_id&quot;: task.id}
+
+@app.get(&quot;/parse/status/{task_id}&quot;)
+async def get_task_status(task_id: str):
+    result = celery_app.AsyncResult(task_id)
+    return {
+        &quot;task_id&quot;: task_id,
+        &quot;status&quot;: result.status,
+        &quot;successful&quot;: result.successful() if result.ready() else None
+    }
+</code></pre>
+<!-- ![Parse](parse.png) -->
+
+<h2 id="3-celery">Подзадача 3: Настройка Celery для асинхронного выполнения задач</h2>
+<h3 id="celery-worker-celery_workerpy">Celery Worker (celery_worker.py)</h3>
+<pre><code class="language-python">from celery import Celery
+from asgiref.sync import async_to_sync
+from task2.parse_asyncio import main
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+CELERY_BROKER_URL = os.getenv(&quot;CELERY_BROKER_URL&quot;)
+CELERY_RESULT_BACKEND = os.getenv(&quot;CELERY_RESULT_BACKEND&quot;)
+
+celery_app = Celery(
+    &quot;parser&quot;,
+    broker=CELERY_BROKER_URL,
+    backend=CELERY_RESULT_BACKEND,
+)
+
+@celery_app.task(name=&quot;parse&quot;)
+def parse(url: str):
+    async_to_sync(main)(url)
+</code></pre>
+<!-- ![trigger](trigger.png)
+![trigger_res](trigger_res.png) -->
+
+<h2 id="4">Подзадача 4: Интеграция парсера с основным приложением</h2>
+<h3 id="router">Router для вызова парсера из основного приложения</h3>
+<pre><code class="language-python">from fastapi import APIRouter, HTTPException
+from pydantic import BaseModel
+import httpx
+from celery import Celery
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+router = APIRouter(prefix=&quot;/parse&quot;, tags=[&quot;Parser&quot;])
+
+PARSER_URL = os.getenv(&quot;PARSER_URL&quot;)
+CELERY_BROKER_URL = os.getenv(&quot;CELERY_BROKER_URL&quot;)
+CELERY_RESULT_BACKEND = os.getenv(&quot;CELERY_RESULT_BACKEND&quot;)
+
+celery_app = Celery(
+    &quot;parser_celery&quot;,
+    broker=os.getenv(&quot;CELERY_BROKER_URL&quot;, &quot;redis://redis:6379/0&quot;),
+    backend=os.getenv(&quot;CELERY_RESULT_BACKEND&quot;, &quot;redis://redis:6379/0&quot;),
+)
+
+
+class ParseRequest(BaseModel):
+    url: str
+
+
+@router.post(&quot;/&quot;)
+async def call_parser(request: ParseRequest):
+    async with httpx.AsyncClient(timeout=15) as client:
+        try:
+            response = await client.post(f&quot;{PARSER_URL}/parse&quot;, json=request.dict())
+            response.raise_for_status()
+            return response.json()
+        except httpx.HTTPStatusError as e:
+            raise HTTPException(status_code=response.status_code, detail=response.text)
+
+
+@router.post(&quot;/async-parse&quot;)
+def enqueue_parse_task(request: ParseRequest):
+    task = celery_app.send_task(&quot;parse&quot;, args=[request.url])
+    return {&quot;task_id&quot;: task.id, &quot;status&quot;: task.status, &quot;message&quot;: &quot;Parsing started&quot;}
+
+
+@router.get(&quot;/status/{task_id}&quot;)
+def get_task_status(task_id: str):
+    result = celery_app.AsyncResult(task_id)
+    return {
+        &quot;task_id&quot;: task_id,
+        &quot;status&quot;: result.status,
+        &quot;successful&quot;: result.successful() if result.ready() else None,
+    }
+</code></pre>
+<!-- ![async](async.png)
+![async_res](async_res.png) -->
+
+<h2 id="_3">Принцип работы системы</h2>
+<p><strong>Синхронный вызов парсера</strong>:</p>
+<ul>
+<li>
+<p>Запрос приходит на эндпоинт <code>/parse</code> основного приложения</p>
+</li>
+<li>
+<p>Основное приложение перенаправляет запрос в сервис парсера</p>
+</li>
+<li>
+<p>Парсер выполняет обработку и возвращает результат</p>
+</li>
+</ul>
+<p><strong>Асинхронный вызов парсера через очередь</strong>:</p>
+<ul>
+<li>
+<p>Запрос приходит на эндпоинт <code>/parse/async-parse</code> основного приложения</p>
+</li>
+<li>
+<p>Основное приложение создает задачу в очереди Celery</p>
+</li>
+<li>
+<p>Задача обрабатывается Celery worker'ом асинхронно</p>
+</li>
+<li>
+<p>Клиент может проверить статус выполнения задачи по её ID</p>
+</li>
+</ul>
+<p><strong>Проверка статуса задачи</strong>:</p>
+<ul>
+<li>
+<p>Запрос на эндпоинт <code>/parse/status/{task_id}</code> возвращает текущий статус задачи</p>
+</li>
+<li>
+<p>При готовности результата, возвращается также и сам результат</p>
+</li>
+</ul>
+<h2 id="_4">Схема взаимодействия компонентов</h2>
+<ol>
+<li><strong>finance_app</strong> - основное приложение с бизнес-логикой</li>
+<li><strong>parser_service</strong> - микросервис для парсинга данных </li>
+<li><strong>redis</strong> - хранилище для очередей задач</li>
+<li><strong>celery_worker</strong> - обработчик асинхронных задач</li>
+<li><strong>db</strong> - база данных PostgreSQL для хранения обработанных данных</li>
+</ol>
+<p>Все компоненты взаимодействуют между собой в рамках Docker-сети, что обеспечивает изоляцию и независимость сервисов.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
